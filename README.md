@@ -123,14 +123,7 @@ print(std._Student__display())
  
  ### Reference Answer:
  
- '''python
- # -*- coding: utf-8 -*-
-"""
-Created on Tue May 25 16:10:24 2021
-
-@author: Jagadeeswar190
-"""
-
+```python
 from time import sleep
 
 
@@ -157,7 +150,6 @@ class Clock:
         """Displaying time"""
         return  '%02d:%02d:%02d'  % ( self . _hour , self . _minute , self . _second )
         #print("{0}:{1}:{2}".format(self._hour,self._minute,self._second))
-
 def main():
     clock=Clock(23,59,58)
     while True:
