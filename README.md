@@ -30,7 +30,7 @@ class Student:
         else:
             print("%s is watching the island country movie."%(self.name))
  ```
- 
+
  ## Create and use objects
  
  After we define a class, we can create an object and send a message to the object in the following way.
@@ -116,4 +116,55 @@ print(std._Student__name)
 #'Steve'
 print(std._Student__display())
 #'This is private method.'
+```
+ ## Exercise
+ 
+ Exercise1: Define a class to describe digital clocks.
+ 
+ ### Reference Answer:
+ 
+ '''python
+ # -*- coding: utf-8 -*-
+"""
+Created on Tue May 25 16:10:24 2021
+
+@author: Jagadeeswar190
+"""
+
+from time import sleep
+
+
+class Clock:
+    def __init__(self,hour,minute,second):
+        self._hour=hour
+        self._minute=minute
+        self._second=second
+    
+    def run(self):
+        self._second+=1
+        if self._second==60:
+            self._second=0
+            self._minute+=1
+
+            if self._minute==60:
+                self._minute=0
+                self._hour+=1
+        
+                if self._hour==24:
+                    self._hour=0
+    
+    def display(self):
+        """Displaying time"""
+        return  '%02d:%02d:%02d'  % ( self . _hour , self . _minute , self . _second )
+        #print("{0}:{1}:{2}".format(self._hour,self._minute,self._second))
+
+def main():
+    clock=Clock(23,59,58)
+    while True:
+        print(clock.display())
+        sleep(1)
+        clock.run()
+
+if __name__ =='__main__':
+    main()
 ```
